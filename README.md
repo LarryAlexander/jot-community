@@ -88,9 +88,9 @@ While the main Jot codebase is private, we welcome community contributions throu
 
 ## Support
 
-For support inquiries:
-- Open an issue in this repository
-- Email: jot.app.support@gmail.com
+For support:
+- [Start a Discussion](../../discussions) — Best for questions and general help
+- [Open an Issue](../../issues) — For bug reports and feature requests
 
 ## License
 

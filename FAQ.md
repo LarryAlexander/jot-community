@@ -89,6 +89,6 @@ Yes! You can enable biometric lock (Face ID/Touch ID) for individual notes or en
 
 ## Support
 
-Still have questions? 
-- [Open an issue](../../issues/new?template=question.md)
-- Email: jot.app.support@gmail.com
+Still have questions?
+- [Start a Discussion](../../discussions) — Best for questions and general help
+- [Open an Issue](../../issues/new?template=question.md) — For specific questions

@@ -8,7 +8,7 @@ We take security seriously at Jot. If you discover a security vulnerability, ple
 
 **Do NOT open a public issue for security vulnerabilities.**
 
-Instead, please email us directly at: **jot.app.support@gmail.com**
+Instead, please use [GitHub Security Advisories](../../security/advisories/new) to privately report the vulnerability.
 
 Include the following information:
 - Description of the vulnerability
