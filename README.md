@@ -6,6 +6,16 @@ A polished note-taking app built with Flutter that combines the clean, minimalis
 
 Jot is designed to be a beautiful, intuitive notes app that starts simple but scales with your needs. Built with a local-first approach, your notes are stored as plain Markdown files, ensuring you always own your data. As your collection grows, Jot offers powerful organization, search, and knowledge management features without compromising on simplicity or performance.
 
+## Downloads
+
+- **iOS:** App Store — https://apps.apple.com/us/app/jot-jot-it-down/id6744575448
+- **macOS:** Coming to TestFlight (announced in https://github.com/LarryAlexander/jot-community/discussions)
+- **Windows (experimental):** https://github.com/LarryAlexander/jot/releases/latest
+
+## Community & Support
+
+- Bugs / feature requests / discussions: https://github.com/LarryAlexander/jot-community
+
 ## 📋 **Project Status & TODOs**
 
 📊 **Current Status:** Active development with 96 TODOs across 20 files  
