@@ -1,101 +1,237 @@
-# Jot Community
+# Jot (JID) - "Just Jot it Down"
 
-Welcome to the official community hub for **Jot** — the iOS-first, privacy-focused note-taking app with AI features.
+A polished note-taking app built with Flutter that combines the clean, minimalist interface of Apple Notes with the powerful knowledge management features of Obsidian.
 
 ## About Jot
 
-Jot is a lightning-fast, local-first note-taking app designed for iOS. With powerful AI features, voice transcription, beautiful Markdown support, and smart daily planning, Jot helps you capture, organize, and accomplish more.
+Jot is designed to be a beautiful, intuitive notes app that starts simple but scales with your needs. Built with a local-first approach, your notes are stored as plain Markdown files, ensuring you always own your data. As your collection grows, Jot offers powerful organization, search, and knowledge management features without compromising on simplicity or performance.
 
-**Key Features:**
-- Local-first storage with optional encrypted iCloud backup
-- AI-powered intelligence (Gemini, OpenAI, Claude)
-- Plan My Day with focus mode and break reminders
-- Voice recording with automatic transcription
-- Full Markdown support with Obsidian-style syntax
-- Wikilinks, callout blocks, and smart previews
-- Project management with task tracking
-- Home screen widgets and Share extension
-- Biometric lock for private notes
-- No ads, no tracking, no data mining
+## 📋 **Project Status & TODOs**
 
-## How to Use This Repository
+📊 **Current Status:** Active development with 96 TODOs across 20 files  
+🎯 **Priority Focus:** Settings integration, AI pricing updates, notification system  
+📝 **Full Details:** See [Open Issues](docs/planning/OPEN_ISSUES.md) for prioritized tracking
 
-This is the public community hub for Jot. Use it to:
+## 🗂️ **Project Structure**
 
-- **Report Bugs** — Found something broken? [Open a bug report](../../issues/new?template=bug_report.md)
-- **Request Features** — Have an idea? [Submit a feature request](../../issues/new?template=feature_request.md)
-- **Ask Questions** — Need help? [Start a discussion](../../discussions)
-- **Stay Updated** — Watch this repo for announcements and updates
+This project follows a feature-based architecture for improved maintainability:
 
-## Links
+### **📚 Documentation**
 
-| Resource | Link |
-|----------|------|
-| Website | [larryalexander.github.io/jot](https://larryalexander.github.io/jot) |
-| App Store | Coming Soon |
-| Privacy Policy | [Privacy Policy](https://larryalexander.github.io/jot/privacy.html) |
-| Terms of Service | [Terms of Service](https://larryalexander.github.io/jot/terms.html) |
+- [**Documentation Index**](docs/README.md) - Primary index for active technical documentation
+- [**Folder Management Architecture**](docs/architecture/FOLDER_MANAGEMENT_ARCHITECTURE.md) - Canonical source tree structure and rules
+- [**Important Docs Replacement Plan**](docs/planning/IMPORTANT_DOCS_REPLACEMENT_PLAN.md) - Plan to replace high-value legacy docs
+- [**Legacy Root Docs Archive**](docs/archive/root-legacy/) - Historical docs moved out of repository root
+- [**ML Ranking Architecture**](specs/011-hybrid-ml-ai-ranking/ranking-architecture.md) - Technical design of the hybrid ranking system
 
-## Current Version
+### **📂 Code Organization**
 
-**v1.0.10** — Released December 2025
+- [**Models**](lib/src/domain/models/models.md) - Data structures and domain entities (28 files)
+- [**Services**](lib/src/services/services.md) - Business logic and external integrations (31 files)
+- [**Widgets**](lib/src/widgets/widgets.md) - Reusable UI components (40 files)
+- [**Screens**](lib/src/screens/screens.md) - Application screens and page-level components (20+ files)
 
-See the [What's New](#whats-new-in-v1010) section below for details.
+## Key Features
 
-## What's New in v1.0.10
+### 🎯 **Current Features**
 
-**Plan My Day — Smarter Daily Planning**
-- AI-assisted morning planning with focus tasks
-- Focus mode to minimize distractions
-- Break reminders during long work sessions
-- Task completion ratings and progress tracking
-- iOS Live Activities for lock screen task tracking
+- ✏️ Rich text editing with Markdown support and live preview
+- 📰 **RSS Intelligence Briefing** - AI-prioritized news feed with deep note integration
+- 📋 **Smart Lists** - Apple Reminders-style intelligent task filtering (Today, This Week, High Priority, Overdue)
+- 📊 **Intelligent Feed Ranking** - Hybrid ML + AI ranking identifies "Must Read" articles
+- 🤖 AI-powered content enhancement (Gemini, OpenAI, Claude integration)
+- 💰 AI Credits system _(ad monetization temporarily disabled for v1.0.10)_
+- 🗂️ Advanced folder organization with smart folders
+- 📎 Multi-media attachments (images, audio, documents)
+- 🎤 Voice notes with transcription capabilities
+- 🔍 Full-text search with content indexing
+- 📊 Usage analytics and writing insights
+- 🏷️ Tag system with auto-suggestions
+- ⚙️ Comprehensive settings and preferences
+- 🌙 Adaptive theming (light/dark mode)
 
-**Share Extension — Capture from Anywhere**
-- Share text, URLs, images, PDFs, and documents directly into Jot
-- Batch import support for multiple items
-- Background processing for large files
+### 🚀 **In Development**
 
-**Editor Improvements**
-- Animated preview toggle button
-- Obsidian-style callout blocks
-- Wikilinks with smart previews on long-press
-- Auto-update links when renaming notes
-- Customizable toolbar size and density
+- 🔔 Cross-platform notifications
+- 📤 Multi-format data export (JSON, PDF, text)
+- � Real-time analytics dashboard
+- 🔒 Enhanced privacy and security controls
+- ☁️ Cloud synchronization
+- 🎨 Advanced customization options
 
-**Project Management**
-- README-as-Hub structure with organized subfolders
-- Auto-generated project templates
-- Enhanced task tracking
+## Technical Architecture
 
-## Roadmap
+- **Framework:** Flutter 3.6.1+
+- **State Management:** Riverpod with provider-based dependency injection
+- **Database:** Isar (local)
+- **ML/AI Ranking:** Local-first pipeline (TF-IDF, LDA) + Semantic AI Scoring with Privacy Controls
+- **AI Integration:** Multi-provider system (Gemini, OpenAI, Anthropic)
+- **Native iOS Integration:** Speech Recognition, Share Extension, Method Channels
+- **Storage:** Local-first with optional cloud backup
+- **Architecture:** Feature-based modular structure with clean separation of concerns
 
-| Version | Theme | Status |
-|---------|-------|--------|
-| v1.0.10 | Stability & Plan My Day | Released |
-| v1.1.0 | Theming & Backgrounds | Planned |
-| v1.2.0 | Capture & Import | Planned |
-| v1.3.0 | AI & Credits Experience | Planned |
+### Platform-Specific Features (Currently iOS)
 
-## Contributing
+- **Voice Transcription:** Native SFSpeechRecognizer for accurate file-based transcription
+- **Share Extension:** Capture content from Safari, Photos, and other apps (requires Xcode setup)
+- **Notifications:** Local notifications with proper permission handling
+- **App Groups:** Shared data storage between app and extensions
 
-While the main Jot codebase is private, we welcome community contributions through:
+See [iOS Share Extension Setup Guide](docs/guides/IOS_SHARE_EXTENSION_SETUP.md) and [iOS Features Testing Guide](docs/guides/IOS_FEATURES_TESTING_GUIDE.md) for details.
 
-- Bug reports and detailed reproduction steps
-- Feature requests with clear use cases
-- Documentation improvements
-- Translation suggestions
+### 🔌 Model Context Protocol (MCP) Server
 
-## Support
+Jot includes a built-in MCP server that exposes note operations to AI assistants (VS Code Copilot, Claude Desktop, Cursor). Connect any MCP-enabled AI tool to create, search, and manage your Jot notes programmatically.
 
-For support:
-- [Start a Discussion](../../discussions) — Best for questions and general help
-- [Open an Issue](../../issues) — For bug reports and feature requests
+**One-Click Install for VS Code:**
+
+[![Install Jot MCP Server](https://img.shields.io/badge/Install%20to%20VS%20Code-Jot%20MCP-0078D4?style=for-the-badge&logo=visualstudiocode)](vscode:extension/install-mcp?%7B%22name%22%3A%22jot%22%2C%22command%22%3A%22dart%22%2C%22args%22%3A%5B%22bin%2Fmcp_server.dart%22%5D%2C%22cwd%22%3A%22%24%7BworkspaceFolder%7D%22%7D)
+
+**Manual Configuration:**
+
+Add to your `.vscode/settings.json` or Claude Desktop config:
+
+```json
+{
+  "mcp.servers": {
+    "jot": {
+      "command": "dart",
+      "args": ["bin/mcp_server.dart"],
+      "cwd": "/path/to/Jot"
+    }
+  }
+}
+```
+
+**Available Tools:**
+- `create_note` - Create notes with title, content, tags, folders
+- `search_notes` - Search with relevance scoring
+- `get_note_by_id` - Retrieve note details
+- `update_note` - Modify existing notes
+- `create_folder` - Organize with folders
+- `list_folders` - Browse folder tree
+- `add_tag` - Tag notes
+- `link_notes` - Create wikilinks
+
+See [MCP Installation Guide](docs/MCP_INSTALLATION.md) and [MCP Testing Guide](docs/MCP_TESTING_GUIDE.md) for full documentation.
+
+## Development Roadmap
+
+Jot is being developed in phases:
+
+1. **Phase 0 (MVP):** Core note-taking with Markdown and basic organization
+2. **Phase 1:** Enhanced editing with rich text and media support
+3. **Phase 2:** Search and improved organization (tags, filters, pins)
+4. **Phase 3:** Cloud sync and cross-device access
+5. **Phase 4:** Customization and security features
+6. **Phase 5:** Advanced note features (linking, backlinks, daily notes)
+
+See [Feature Integration Roadmap](docs/planning/FEATURE_INTEGRATION_ROADMAP.md) for current development planning.
+
+## Philosophy
+
+Jot follows these key principles:
+
+- **Local-first:** Your notes are stored on your device in open formats - no vendor lock-in
+- **Simplicity first:** Clean, intuitive UI that stays out of your way
+- **Progressive complexity:** Start simple, but scale with powerful features as needed
+- **Privacy focused:** Your notes are yours alone - no tracking or data collection
+
+## Getting Started
+
+_Coming soon - development in progress_
+
+## 🔐 Enhanced Backup & Restore
+
+The app now includes a secure, version-aware backup and restoration flow:
+
+- Encrypted backups using AES-GCM with PBKDF2 key derivation
+- Progress updates during backup/restore operations
+- Restore Preview Dialog shows backup metadata and lets you toggle version-history restore
+- Share backups via the system share sheet (SharePlus)
+
+Where to find it:
+
+- Storage & Backup screen: create backups, view history, share files, and restore.
+- Restore Preview is shown before restoring any backup to confirm contents and options.
+
+Notes:
+
+- Backups are encrypted-at-rest; keys are managed via a KeyManager abstraction (secure storage on device).
+- Restore has an option to include/exclude version history.
+
+## 💰 AI Credits & Ad System
+
+> **⚠️ Note:** Ad-based monetization and Stripe payments are **temporarily disabled in v1.0.10** to focus on core stability. Infrastructure remains in codebase, controlled by feature flags. See issues [#195](https://github.com/LarryAlexander/jot/issues/195) (Google Ads) and [#103](https://github.com/LarryAlexander/jot/issues/103) (Stripe) for production roadmap.
+
+Jot features a comprehensive monetization system that rewards users with AI credits for viewing ads:
+
+### Earning Credits
+
+- **Rewarded Ads**: 5.0 credits - Watch full ad in Settings
+- **App Open Ads**: 1.0 credit - Once per day on app launch
+- **Banner Ads**: 0.5 credits - Bottom of home screen
+- **RSS Styled Ads**: 0.5 credits - Sponsored content in RSS feeds
+- **Project Styled Ads**: 0.5 credits - Integrated in Projects folder
+
+### Ad Controls
+
+Users have complete control over ad visibility via **Settings → Ad Settings**:
+
+- Toggle individual ad types on/off
+- Credits balance displayed in Settings
+- Watch rewarded ads on-demand for maximum credits
+
+### Technical Details
+
+**Architecture:**
+
+- `AdDisplayService` - Manages App Open ads and credit distribution
+- `AdCreditsService` - Handles Rewarded ads
+- `CreditTransactionService` - Core credit operations with source tracking
+- `AdSettings` - User preferences (Isar collection)
+- Reactive Riverpod providers for real-time balance updates
+
+**Documentation:**
+
+- [AI Credits Guide](docs/features/AI_CREDITS_GUIDE.md) - Complete system documentation
+- [Development Guide](docs/DEVELOPMENT_GUIDE.md#ad-system-architecture) - Implementation details
+
+**Privacy:**
+⚠️ UMP consent flow required before production release (GDPR/ATT compliance)
+
+## 🧪 Dev quickstart
+
+Analyze and tests:
+
+- Run the analyzer task to verify the codebase is clean.
+- Run unit/widget tests; Isar-dependent tests are skipped in environments without native Isar.
+
+Code pointers:
+
+- Core: `lib/src/services/database_backup_service.dart`, `lib/src/services/backup_encryption_service.dart`
+- UI: `lib/src/widgets/dialogs/restore_preview_dialog.dart`, `lib/src/screens/storage_backup_screen.dart`
+- Providers: `lib/src/providers/backup_progress_provider.dart`
+- Specs: `specs/907-*.md` (implementation and notes)
+
+## 📲 Install to device (iOS)
+
+To install to a connected iOS device (e.g., LATHEKID):
+
+- Ensure code signing is configured in Xcode for the Runner target (Team, Bundle ID, provisioning).
+- Connect the device via USB and trust the computer.
+- Select the device with `flutter devices` and install with `flutter install -d <device-id>`.
+
+If your device shows as “LATHEKID,” you can target it directly once it appears in `flutter devices`.
 
 ## License
 
-Jot is proprietary software. This community repository is for issue tracking and discussions only.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
----
+## Reporting issues and feedback
 
-*Jot It Down — Capture ideas before they fade.*
+The app includes an in-app Feedback form (Settings → Feedback). Submissions are sent to a secure backend that files GitHub issues on your behalf.
+
+- Deploy the function and set `FEEDBACK_ENDPOINT` in `.env` to the deployed URL (see `.env.example`)
+
+# Force workflow trigger
