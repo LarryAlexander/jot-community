@@ -50,7 +50,7 @@ This project follows a feature-based architecture for improved maintainability:
 - 📋 **Smart Lists** - Apple Reminders-style intelligent task filtering (Today, This Week, High Priority, Overdue)
 - 📊 **Intelligent Feed Ranking** - Hybrid ML + AI ranking identifies "Must Read" articles
 - 🤖 AI-powered content enhancement (Gemini, OpenAI, Claude integration)
-- 💰 AI Credits system _(ad monetization temporarily disabled for v1.0.10)_
+- 🤖 Bring-your-own-key AI with local usage tracking
 - 🗂️ Advanced folder organization with smart folders
 - 📎 Multi-media attachments (images, audio, documents)
 - 🎤 Voice notes with transcription capabilities
@@ -170,45 +170,32 @@ Notes:
 - Backups are encrypted-at-rest; keys are managed via a KeyManager abstraction (secure storage on device).
 - Restore has an option to include/exclude version history.
 
-## 💰 AI Credits & Ad System
+## 💰 Monetization
 
-> **⚠️ Note:** Ad-based monetization and Stripe payments are **temporarily disabled in v1.0.10** to focus on core stability. Infrastructure remains in codebase, controlled by feature flags. See issues [#195](https://github.com/LarryAlexander/jot/issues/195) (Google Ads) and [#103](https://github.com/LarryAlexander/jot/issues/103) (Stripe) for production roadmap.
+Jot should stay broadly usable without turning AI into a house-account liability:
 
-Jot features a comprehensive monetization system that rewards users with AI credits for viewing ads:
+### Current product direction
 
-### Earning Credits
-
-- **Rewarded Ads**: 5.0 credits - Watch full ad in Settings
-- **App Open Ads**: 1.0 credit - Once per day on app launch
-- **Banner Ads**: 0.5 credits - Bottom of home screen
-- **RSS Styled Ads**: 0.5 credits - Sponsored content in RSS feeds
-- **Project Styled Ads**: 0.5 credits - Integrated in Projects folder
-
-### Ad Controls
-
-Users have complete control over ad visibility via **Settings → Ad Settings**:
-
-- Toggle individual ad types on/off
-- Credits balance displayed in Settings
-- Watch rewarded ads on-demand for maximum credits
+- **AI is BYOK/local-first**: users connect their own OpenAI, Anthropic, Google AI, Ollama, or compatible local endpoints
+- **No AI credits system**: Jot does not sell, grant, or subsidize hosted AI usage
+- **Ad surfaces**: rewarded AI unlocks are retired; passive placements remain disabled in this release
+- **Customization Pass**: remains the main premium/support surface and can continue to act as the ad-removal entitlement
 
 ### Technical Details
 
 **Architecture:**
 
-- `AdDisplayService` - Manages App Open ads and credit distribution
-- `AdCreditsService` - Handles Rewarded ads
-- `CreditTransactionService` - Core credit operations with source tracking
-- `AdSettings` - User preferences (Isar collection)
-- Reactive Riverpod providers for real-time balance updates
+- `MonetizationCoordinator` - Consent, ATT, rollout gating, and ad initialization
+- `AIServiceManager` - Runs AI only through user-configured providers
+- `UsageSettingsScreen` - Local usage tracking and budget alerts for user-managed AI spend
 
 **Documentation:**
 
-- [AI Credits Guide](docs/features/AI_CREDITS_GUIDE.md) - Complete system documentation
+- [AI Credits Guide](docs/features/AI_CREDITS_GUIDE.md) - Legacy credits documentation pending archival
 - [Development Guide](docs/DEVELOPMENT_GUIDE.md#ad-system-architecture) - Implementation details
 
-**Privacy:**
-⚠️ UMP consent flow required before production release (GDPR/ATT compliance)
+**Release note:**
+Keep `ADMOB_IOS_APP_ID` in `ios/Flutter/Debug.xcconfig` and `ios/Flutter/Release.xcconfig` aligned with the active production Jot AdMob app.
 
 ## 🧪 Dev quickstart
 
