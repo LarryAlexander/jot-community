@@ -124,15 +124,15 @@ Launch redesigned landing page with updated hero copy, testimonial carousel, and
 
 ---
 
-## Credits & Cost
+## Cost & Access
 
-AI conversion uses Jot credits. Cost scales with input length and chosen model.
+AI conversion uses your configured provider (or local endpoint). Cost scales with input length and chosen model.
 
-- **Typical cost:** 2–5 credits for short inputs; 5–15 for longer documents.
-- **Low on credits?** Watch a rewarded ad to earn 5 credits instantly.
-- **Using your own API key?** No Jot credits are charged.
+- **Typical usage:** lightweight inputs are cheaper and faster than multi-page pastes.
+- **No in-app wallet:** Jot does not use a built-in credit balance.
+- **Using your own API key:** billing and limits are managed by your provider.
 
-See [Projects AI: Credits & Ads](projects_ai_credits.md) for details.
+See [Projects AI: API Keys & Costs](projects_ai_credits.md) for details.
 
 ---
 
@@ -172,6 +172,6 @@ Combine them into a single paste first, or create separate projects and link via
 ## Need Help?
 
 - Open **Settings → Help & Guides**
-- Check [Projects AI: Credits & Ads](projects_ai_credits.md)
+- Check [Projects AI: API Keys & Costs](projects_ai_credits.md)
 - Contact support via **Settings → Report Issue / Feedback**
 ````

@@ -282,7 +282,7 @@ Instead of formatting manually, you'll be able to:
 3. AI structures it automatically
 4. Review and approve
 
-**Cost:** Small amount of AI credits (saves 15-30 min of work!)
+**Cost:** Uses your configured AI provider (saves 15-30 min of work!)
 
 **Use cases:**
 
@@ -293,7 +293,7 @@ Instead of formatting manually, you'll be able to:
 
 👉 **[Learn about AI-powered creation →](ai_project_creation.md)**
 
-**Credits & ads:** See how Projects AI charges credits, when ads unlock access, and how to keep costs low in [Projects AI: Credits & Ads](projects_ai_credits.md).
+**Provider access:** See how Projects AI uses your own provider configuration and how to keep usage efficient in [Projects AI: API Keys & Costs](projects_ai_credits.md).
 
 ---
 

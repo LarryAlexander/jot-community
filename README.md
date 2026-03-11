@@ -170,15 +170,15 @@ Notes:
 - Backups are encrypted-at-rest; keys are managed via a KeyManager abstraction (secure storage on device).
 - Restore has an option to include/exclude version history.
 
-## 💰 Monetization
+## 💼 Product access model
 
 Jot should stay broadly usable without turning AI into a house-account liability:
 
 ### Current product direction
 
 - **AI is BYOK/local-first**: users connect their own OpenAI, Anthropic, Google AI, Ollama, or compatible local endpoints
-- **No AI credits system**: Jot does not sell, grant, or subsidize hosted AI usage
-- **Ad surfaces**: rewarded AI unlocks are retired; passive placements remain disabled in this release
+- **No internal credit wallet**: Jot does not sell, grant, or subsidize hosted AI usage
+- **No ad-based unlock path**: rewarded unlocks are retired; passive placements remain disabled in this release
 - **Customization Pass**: remains the main premium/support surface and can continue to act as the ad-removal entitlement
 
 ### Technical Details
@@ -191,7 +191,7 @@ Jot should stay broadly usable without turning AI into a house-account liability
 
 **Documentation:**
 
-- [AI Credits Guide](docs/features/AI_CREDITS_GUIDE.md) - Legacy credits documentation pending archival
+- Legacy monetization docs are archival-only and no longer describe the live product path
 - [Development Guide](docs/DEVELOPMENT_GUIDE.md#ad-system-architecture) - Implementation details
 
 **Release note:**
